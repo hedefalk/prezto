@@ -34,7 +34,8 @@ alias ll='ls -lFhaG' # G för färg
 whosonport () { lsof -i :$*; } # lsof -i :8080
 pidonport (){ lsof -i :$* | awk 'NR!=1 {print $2}'; }
 
-
+# Pass location
+export PASSWORD_STORE_DIR=$HOME/Dropbox/security/password-store
 
 # Home bin
 export PATH=$PATH:~/bin
