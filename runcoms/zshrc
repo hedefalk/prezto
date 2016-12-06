@@ -18,7 +18,7 @@ unsetopt nomatch
 compctl -g '~/.teamocil/*(:t:r)' itermocil
 
 # dotfiles alias
-alias dotfiles='git --git-dir=$HOME/dotfiles-bare --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
 # Don't share history between tabs/panes
 setopt nosharehistory
@@ -45,9 +45,6 @@ export PATH=$PATH:~/Dropbox/bin
 # SBT
 alias rsbt='SBT_OPTS="-XX:MaxPermSize=256m -noverify -javaagent:/Users/viktor/Dropbox/jrebel/jrebel.jar" sbt'
 alias rxsbt='JAVA_OPTS="-XX:MaxPermSize=512m -Drebel.lift_plugin=true -noverify" xsbt -J-javaagent:/Users/viktor/Dropbox/jrebel/jrebel.jar'
-
-# Setup docker env for default machine
-#eval "$(docker-machine env default)"
 
 ###-begin-npm-completion-###
 #
@@ -110,11 +107,6 @@ fi
 # added by travis gem
 [ -f /Users/viktor/.travis/travis.sh ] && source /Users/viktor/.travis/travis.sh
 
+# nvm installed with brew
 export NVM_DIR="/Users/viktor/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/viktor/Downloads/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/viktor/Downloads/google-cloud-sdk/completion.zsh.inc'
+. "/usr/local/opt/nvm/nvm.sh"
